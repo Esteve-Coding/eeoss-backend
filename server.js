@@ -7,7 +7,11 @@ const cors = require("cors");
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://689d154dc7f21f7a65c44d11--timely-bombolone-ef74dc.netlify.app/"], // replace with your Netlify link
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"]
+}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
