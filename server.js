@@ -8,12 +8,17 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: ["https://689d154dc7f21f7a65c44d11--timely-bombolone-ef74dc.netlify.app/"], // replace with your Netlify link
+    origin: ["https://689d154dc7f21f7a65c44d11--timely-bombolone-ef74dc.netlify.app/", // replace with your Netlify link
+   "http://localhost:3000"  ],             // Optional for local testing
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"]
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.get("/test", (req, res) => {
+    res.json({ message: "Backend is working fine!" });
+});
 
 // Route for sending messages
 app.post("/send-message", async (req, res) => {
