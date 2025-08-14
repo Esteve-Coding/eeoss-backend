@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: ["https://689d154dc7f21f7a65c44d11--timely-bombolone-ef74dc.netlify.app/", // replace with your Netlify link
+    origin: ["https://timely-bombolone-ef74dc.netlify.app/", // replace with your Netlify link
    "http://localhost:3000"  ],             // Optional for local testing
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"]
